@@ -19,7 +19,7 @@ module.exports = ({
         .use(cors())
         .use(bodyParser.json())
         .use(compression())
-        .use('/api/products', container.cradle.routerRegister.register(container.cradle.productRouter))
+        .use('/api/', container.cradle.routerRegister.register(container.cradle.productRouter))
         .use((req, res, next) => { next(exception.notFound()); })
         .use(httpErrorMiddleware);
 

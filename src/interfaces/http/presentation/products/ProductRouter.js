@@ -35,7 +35,7 @@ module.exports = ({ container }) => {
         },
         {
             method: 'get',
-            path: '/products/:products_id',
+            path: '/products/:id',
             validation: {
                 body: ctx.productSchema.getProductId,
             },

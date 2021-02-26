@@ -6,26 +6,15 @@ module.exports = ({ providerConnection }) => {
     const connection = providerConnection.connection;
 
     const productSchema = new Schema({
-        name: {
-            type: String,
-            required: true
-        },
-        valueUnitary: {
-            type: Number,
-            required: true
-        },
-        amount: {
-            type: Number,
-            required: true
-        }
-    }, { versionKey: false });
+        name: {type: String, required: true},
+        valueUnitary: {type: String, required: true},
+        amount: {type: String, required: true}
+    }, 
+    { versionKey: true });
 
     productSchema.plugin(paginate);
 
-    productSchema.index(
-        { id: false },
-        { unique: true }
-    );
+    productSchema.index({ id: false }, { unique: true });
 
     return connection.model('product', productSchema);
 };
