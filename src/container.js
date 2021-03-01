@@ -38,7 +38,6 @@ const configureContainer = config => {
                 'src/infra/database/repository/**/*.js',
                 'src/app/operations/**/*.js',
                 'src/app/services/**/*.js',
-                'src/domain/**/*.js',
                 'src/domain/services/**/*.js',
                 'src/domain/schemas/**/*.js',
                 'src/interfaces/http/errors/**/*.js',
@@ -62,6 +61,7 @@ const configureContainer = config => {
             exception: asValue(HttpErrors),
             swaggerOptions: asFunction(swaggerOptions),
         });
+
     return container;
 };
 

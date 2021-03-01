@@ -12,7 +12,7 @@ class ProductRepository {
     }
 
     async getProductId(id) {
-        query = { 'id': id };
+        const query = { 'id': id };
         return await this.productModel.find(query);
     }
 }
