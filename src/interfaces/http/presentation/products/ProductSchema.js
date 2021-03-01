@@ -1,4 +1,4 @@
-const joi = require('@hapi/joi');
+const joi = require('joi');
 
 var productSchema = {
     create: joi.object().keys({
