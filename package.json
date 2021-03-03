@@ -52,6 +52,7 @@
         "mongoose": "^5.11.18",
         "mongoose-paginate": "^5.0.3",
         "morgan": "1.9.1",
+        "nodeman": "^1.1.2",
         "request": "2.88.0",
         "simple-mongoose-autoincrement": "^1.2.1",
         "swagger-jsdoc": "3.4.0",
