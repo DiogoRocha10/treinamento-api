@@ -28,14 +28,13 @@ module.exports = ({ container }) => {
         {
             method: 'get',
             path: '/',
-            validation: {
-                body: ctx.productSchema.create,
-            },
+            validation: {},
             handler: ctx.productController.getProduct
         },
         {
             method: 'get',
             path: '/:id',
+            validation: {},
             handler: ctx.productController.getProductId
         },
     ];
