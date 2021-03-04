@@ -37,5 +37,17 @@ module.exports = ({ container }) => {
             validation: {},
             handler: ctx.productController.getProductId
         },
+        {
+            method: 'put',
+            path: '/:id',
+            validation: {},
+            handler: ctx.productController.updateProduct
+        },
+        {
+            method: 'delete',
+            path: '/:id',
+            validation: {},
+            handler: ctx.productController.deleteProduct
+        },
     ];
 };

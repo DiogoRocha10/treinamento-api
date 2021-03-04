@@ -9,5 +9,13 @@ module.exports = ({ productRepository }) => ({
     
     getProductId: async (id) => {
         return await productRepository.getProductId(id);
+    },
+
+    updateProduct: async (id) => {
+        return await productRepository.updateProduct(id);
+    },
+
+    deleteProduct: async (id) => {
+        return await productRepository.deleteProduct(id);
     }
 });

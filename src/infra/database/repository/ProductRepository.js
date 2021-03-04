@@ -15,6 +15,16 @@ class ProductRepository {
         const query = { 'id': id };
         return await this.productModel.find(query);
     }
+
+    async updateProduct(id) {
+        const query = { 'id': id };
+        return await this.productModel.find(query);
+    }
+
+    async deleteProduct(id) {
+        const query = { 'id': id };
+        return await this.productModel.find(query);
+    }
 }
 
 module.exports = ProductRepository;
