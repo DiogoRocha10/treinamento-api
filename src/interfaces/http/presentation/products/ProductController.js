@@ -11,7 +11,7 @@ module.exports = opts => ({
         return ctx.res.status(opts.httpConstants.code.OK).json(response);
     }),
     getProductId: AsyncMiddleware(async ctx => {
-        const response = await opts.getProductIdOperation.execute(ctx.params.id);
+        const response = await opts.getProductIdOperations.execute(ctx.params);
         return ctx.res.status(opts.httpConstants.code.OK).json(response);
     })
 });

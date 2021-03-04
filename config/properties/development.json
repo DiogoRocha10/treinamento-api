@@ -1,9 +1,9 @@
 {
-    "serviceName": "archref-node",
+    "serviceName": "product-node",
     "db": {
         "username": "admin",
         "password": "admin",
-        "database": "archref-node",
+        "database": "product-node",
         "servers": [
             "127.0.0.1:27017"
         ],
@@ -12,19 +12,19 @@
         "options": {
             "authSource": "admin",
             "replicaSet": ""
+        },
+        "collections": {
+            "product": {
+                "name": "product",
+                "version": "1.0"
+            }
         }
     },
     "web": {
         "port": 4000
     },
     "integration": {
-        "rest": {
-            "cepClientMs": {
-                "baseUrl": "https://viacep.com.br",
-                "timeout": 10000,
-                "rejectUnauthorized": false
-            }
-        }
+        "rest": {}
     },
     "hateoas": {
         "domain": "https://localhost:4000/"

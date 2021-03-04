@@ -19,15 +19,6 @@ const container = createContainer();
 
 const configureContainer = config => {
     container
-        .register({
-            server: asClass(Server).singleton(),
-            router: asFunction(Router),
-            logger: asFunction(logger).singleton(),
-            container: asValue(container),
-            config: asValue(config),
-            exception: asValue(HttpErrors),
-            swaggerOptions: asFunction(swaggerOptions),
-        })
         .loadModules(
             [
                 'src/infra/database/mongo/provider/**/*.js',
@@ -47,7 +38,6 @@ const configureContainer = config => {
                 'src/infra/database/repository/**/*.js',
                 'src/app/operations/**/*.js',
                 'src/app/services/**/*.js',
-                'src/domain/**/*.js',
                 'src/domain/services/**/*.js',
                 'src/domain/schemas/**/*.js',
                 'src/interfaces/http/errors/**/*.js',
@@ -61,7 +51,17 @@ const configureContainer = config => {
                     injectionMode: InjectionMode.PROXY
                 }
             }
-        );
+        )
+        .register({
+            server: asClass(Server).singleton(),
+            router: asFunction(Router),
+            logger: asFunction(logger).singleton(),
+            container: asValue(container),
+            config: asValue(config),
+            exception: asValue(HttpErrors),
+            swaggerOptions: asFunction(swaggerOptions),
+        });
+
     return container;
 };
 

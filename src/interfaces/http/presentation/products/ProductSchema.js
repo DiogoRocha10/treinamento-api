@@ -1,11 +1,10 @@
-const joi = require('@hapi/joi');
+const joi = require('joi');
 
-module.exports = () => ({
+var productSchema = {
     create: joi.object().keys({
-        name: joi.string().required(),
-        valueUnitary: joi.string().required(),
-        amount: joi.string().required()
-    }),
-    getProductId: joi.object().keys({id:joi.object().required()}),
-
-});
+        name: joi.string().trim().required(),
+        valueUnitary: joi.string().trim().required(),
+        amount: joi.string().trim().required()
+    })
+};
+module.exports = () => (productSchema);

@@ -19,7 +19,7 @@ module.exports = ({ container }) => {
          */
         {
             method: 'post',
-            path: '/products',
+            path: '/',
             validation: {
                 body: ctx.productSchema.create,
             },
@@ -27,18 +27,14 @@ module.exports = ({ container }) => {
         },
         {
             method: 'get',
-            path: '/products',
-            validation: {
-                body: ctx.productSchema.create,
-            },
+            path: '/',
+            validation: {},
             handler: ctx.productController.getProduct
         },
         {
             method: 'get',
-            path: '/products/:products_id',
-            validation: {
-                body: ctx.productSchema.getProductId,
-            },
+            path: '/:id',
+            validation: {},
             handler: ctx.productController.getProductId
         },
     ];
