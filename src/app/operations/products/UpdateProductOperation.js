@@ -1,5 +1,5 @@
 module.exports = ({ productService }) => ({
-    execute: async ({ id }) => {
-        return await productService.updateProduct(id);
+    execute: async ({ id }, body) => {
+        return await productService.updateProduct(id, body);
     }
 });

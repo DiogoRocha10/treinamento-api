@@ -9,8 +9,8 @@ module.exports = ({ providerConnection }) => {
     const productSchema = new Schema({
         id: { type: Number, required: true },
         name: { type: String, required: true },
-        valueUnitary: { type: String, required: true },
-        amount: { type: String, required: true }
+        valueUnitary: { type: Number, required: true },
+        amount: { type: Number, required: true }
     }, { versionKey: false, timestamps: true });
 
     productSchema.plugin(autoincrement, { field: 'id' });
