@@ -16,14 +16,14 @@ class ProductRepository {
         return await this.productModel.find(query);
     }
 
-    async updateProduct(id) {
+    async updateProduct(id, data) {
         const query = { 'id': id };
-        return await this.productModel.find(query);
+        return await this.productModel.findOneAndUpdate({id}, data)
     }
 
     async deleteProduct(id) {
         const query = { 'id': id };
-        return await this.productModel.find(query);
+        return await this.productModel.remove(query);
     }
 }
 
