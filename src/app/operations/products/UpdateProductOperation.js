@@ -1,5 +1,11 @@
-module.exports = ({ productService }) => ({
+module.exports = ({ productService, logger }) => ({
     execute: async ({ id }, body) => {
-        return await productService.updateProduct(id, body);
+        try {
+            return await productService.updateProduct(id, body);
+
+        } catch (error) {
+            logger.error(error)
+            throw error
+        } 
     }
 });
