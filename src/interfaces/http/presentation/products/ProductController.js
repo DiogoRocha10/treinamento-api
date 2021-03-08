@@ -4,7 +4,8 @@ const AsyncMiddleware = require('src/interfaces/http/presentation/middlewares/As
 module.exports = opts => ({
     createProduct: AsyncMiddleware(async ctx => {
         const response = await opts.createProductOperation.execute(ctx.body);
-        return ctx.res.status(opts.httpConstants.code.CREATED).json(response);
+        const serialize = opts.productSerialize.create(response);
+        return ctx.res.status(opts.httpConstants.code.CREATED).json(serialize);
     }),
 
     getProduct: AsyncMiddleware(async ctx => {
